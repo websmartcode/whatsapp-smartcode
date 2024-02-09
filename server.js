@@ -1,5 +1,10 @@
 require('dotenv').config(); // Make sure this line is at the top
 
+if (!process.env.BASE_WEBHOOK_URL) {
+    console.error('BASE_WEBHOOK_URL environment variable is not available. Exiting...');
+    process.exit(1);
+}
+
 const app = require('./src/app');
 const { baseWebhookURL } = require('./src/config');
 
