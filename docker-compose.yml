@@ -4,11 +4,11 @@ services:
   api_smart:
     image: chrishubert/whatsapp-web-api:latest
     networks:
-      - comunidadezdg
+      - smartcode
     volumes:
     - api_smart_sessions:/usr/src/app/sessions
     environment:
-      - API_KEY=comunidadezdg  # OPTIONAL
+      - API_KEY=smartcode  # OPTIONAL
       - BASE_WEBHOOK_URL=https://api2024.smartcode.com.br/localCallbackExample
       - ENABLE_LOCAL_CALLBACK_EXAMPLE=TRUE # OPTIONAL, NOT RECOMMENDED FOR PRODUCTION
       - MAX_ATTACHMENT_SIZE=5000000 # IN BYTES
@@ -42,6 +42,6 @@ volumes:
     name: api_smart_sessions
 
 networks:
-  comunidadezdg:
+  smartcode:
     name: smartcode
     external: true
