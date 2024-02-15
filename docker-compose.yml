@@ -9,7 +9,7 @@ services:
     - api_smart_sessions:/usr/src/app/sessions
     environment:
       - API_KEY=comunidadezdg  # OPTIONAL
-      - BASE_WEBHOOK_URL=https://api2024.comunidadezdg.com.br/localCallbackExample
+      - BASE_WEBHOOK_URL=https://api2024.smartcode.com.br/localCallbackExample
       - ENABLE_LOCAL_CALLBACK_EXAMPLE=TRUE # OPTIONAL, NOT RECOMMENDED FOR PRODUCTION
       - MAX_ATTACHMENT_SIZE=5000000 # IN BYTES
       - SET_MESSAGES_AS_SEEN=TRUE # WILL MARK THE MESSAGES AS READ AUTOMATICALLY
@@ -28,7 +28,7 @@ services:
           memory: 2048M
       labels:
         - traefik.enable=true
-        - traefik.http.routers.api_smart.rule=Host(`api2024.comunidadezdg.com.br`)
+        - traefik.http.routers.api_smart.rule=Host(`api2024.smartcode.com.br`)
         - traefik.http.routers.api_smart.entrypoints=websecure
         - traefik.http.routers.api_smart.tls.certresolver=letsencryptresolver
         - traefik.http.routers.api_smart.priority=1
@@ -43,5 +43,5 @@ volumes:
 
 networks:
   comunidadezdg:
-    name: comunidadezdg
+    name: smartcode
     external: true
