@@ -1,0 +1,9 @@
+version: 2
+services:
+  my-app:
+    image: 'node:20-alpine'
+    buildScript: 'npm ci'
+    env:
+      - NODE_ENV=production
+    watchPaths:
+      - '/src/'
